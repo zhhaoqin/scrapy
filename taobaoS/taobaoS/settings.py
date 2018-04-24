@@ -29,7 +29,14 @@ DEFAULT_REQUEST_HEADERS = {
 
 ITEM_PIPELINES = {
     'taobaoS.pipelines.MongoPipeline': 300,
+    'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
 MONGO_URI = 'localhost'
 MONGO_DATABASE = 'taobaoS'
+
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+REDIS_URL = 'redis://@192.168.0.102:6379'

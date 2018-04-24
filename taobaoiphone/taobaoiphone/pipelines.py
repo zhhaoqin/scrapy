@@ -6,13 +6,13 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
 
-class TaobaosPipeline(object):
+class TaobaoiphonePipeline(object):
     def process_item(self, item, spider):
         return item
 
 
 class MongoPipeline(object):
-    collection_name = 'mobile_phone'
+    collection_name = 'search'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
@@ -33,5 +33,5 @@ class MongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].update({'title': item['title']}, dict(item), True)
+        self.db[self.collection_name].update({'name': item['name']}, dict(item), True)
         return item
