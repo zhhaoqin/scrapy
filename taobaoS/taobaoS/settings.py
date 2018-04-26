@@ -39,4 +39,4 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
-REDIS_URL = 'redis://@192.168.0.102:6379'
+REDIS_URL = 'redis://root:123456@192.168.0.102:6379'
