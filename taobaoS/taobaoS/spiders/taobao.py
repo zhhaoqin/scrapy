@@ -8,7 +8,7 @@ from taobaoS.items import TaobaoItem
 
 class TaobaoSpider(Spider):
     name = 'taobao'
-    keyword = '手机'
+    keyword = '耳机'
     allowed_domains = ['s.taobao.com']
     url = 'https://s.taobao.com/search?q=' + keyword
 
